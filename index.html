@@ -1074,18 +1074,124 @@ const compFilterEl = document.getElementById('compFilter');
 renderComparison('all', '');
 
 // ══════ PRODUCT TREE (simplified from v1) ══════
+const AKP='https://www.akfix.com/en/';
 const productData = [
-  { category: 'Yapıştırıcılar', brand: 'akfix', color: 'var(--accent-blue)', products: ['Akfix GA400','Akfix 610','Akfix 310','Akfix Nail Free','Akfix Wood Glue','Akfix Contact Adhesive'] },
-  { category: 'Silikonlar & Sealantlar', brand: 'akfix', color: 'var(--accent-cyan)', products: ['Akfix 100E','Akfix 100D','Akfix N920 (Yangın)','Akfix Aqua Silicone','Akfix Universal Silicone'] },
-  { category: 'PU Köpükler', brand: 'akfix', color: 'var(--accent-emerald)', products: ['Akfix 805','Akfix 806 Mega','Akfix ThermCoat','Akfix FireBlock','Akfix Gun Foam'] },
-  { category: 'Su Yalıtım', brand: 'akkim', color: 'var(--accent-violet)', products: ['Akkim WP-100','Akkim Flex Coat','Akkim Bituminous Membrane'] },
-  { category: 'Seramik Yapıştırıcıları', brand: 'akkim', color: 'var(--accent-amber)', products: ['Akkim C1 Seramik','Akkim C2 Granit','Akkim Flex Tile Adhesive'] },
-  { category: 'Derz Dolgu & Fuga', brand: 'akkim', color: 'var(--accent-rose)', products: ['Akkim Fuga Flex','Akkim Epoxy Fuga','Akkim Anti-Mold Fuga'] },
-  { category: 'Beton Kimyasalları', brand: 'akkim', color: 'var(--accent-blue)', products: ['Akkim Concrete Repair','Akkim Floor Leveler','Akkim Screed'] },
-  { category: 'Isı Yalıtım', brand: 'akkim', color: 'var(--accent-emerald)', products: ['Akkim Mantolama Yapıştırıcı','Akkim EPS/XPS Levha Yapıştırıcı'] },
-  { category: 'Bantlar & Yardımcı', brand: 'akfix', color: 'var(--accent-cyan)', products: ['Akfix Duct Tape','Akfix Masking Tape','Akfix Foam Cleaner','Akfix Primer'] },
-  { category: 'Epoksi Ürünler', brand: 'akkim', color: 'var(--accent-violet)', products: ['Akkim Epoxy Coating','Akkim Epoxy Injection'] },
-  { category: 'Boya & Sprey', brand: 'akfix', color: 'var(--accent-amber)', products: ['Akfix Spray Paint'] },
+  { category: 'Silikonlar & Sealantlar', brand: 'akfix', color: 'var(--accent-cyan)', products: [
+    {n:'100E Universal Silicone',u:AKP+'sealants/100e-universal-silicone-sealant'},
+    {n:'100S Sanitary Silicone',u:AKP+'sealants/100s-sanitary-kitchen-bathroom-silicone'},
+    {n:'100D Shower Silicone',u:AKP+'sealants/100d-shower-cabine-kitchen-bathroom-silicone'},
+    {n:'100AQ Aquarium Silicone',u:AKP+'sealants/100aq-aquarium-silicone'},
+    {n:'905N Neutral Silicone',u:AKP+'sealants/905n-neutral-silicone-sealant-building-construction'},
+    {n:'905E Neuseal Neutral',u:AKP+'sealants/905e-neuseal-neutral-silicone'},
+    {n:'915N Weatherseal',u:AKP+'sealants/915n-weatherseal-neutral-silicone'},
+    {n:'918N Sanitary Neutral',u:AKP+'sealants/918n-neutral-sanitary-silicone'},
+    {n:'910N Roof & Plumbing',u:AKP+'sealants/910n-roof-plumbing-neutral-silicone'},
+    {n:'907N EPDM Silicone',u:AKP+'sealants/907n-epdm-silicone-sealant'},
+    {n:'917N IG Sealant',u:AKP+'sealants/917n-ig-sealant-neutral'},
+    {n:'N920 Fire Rated Silicone',u:AKP+'fire-rated-series/n920-intumescent-fire-rated-neutral-silicone-sealant'},
+    {n:'140F Fire Rated Silicone',u:AKP+'fire-rated-series/140f-fire-rated-silicone-sealant'},
+    {n:'P635 PU Sealant',u:AKP+'sealants/p635-pu-sealant'},
+    {n:'P636 Fire PU Sealant',u:AKP+'fire-rated-series/p636-fire-rated-pu-sealant'},
+    {n:'Multi-Seal AST Polymer',u:AKP+'sealants/multi-seal-universal-sealant-adhesive'},
+    {n:'Self Leveling Hybrid',u:AKP+'sealants/self-leveling-hybrid-sealant'},
+    {n:'602 Bitum Sealant',u:AKP+'sealants/602-bitum-sealant'},
+    {n:'AC605 Acrylic Sealant',u:AKP+'sealants/ac605-acrylic-sealant'},
+    {n:'AC607 Fire Stop Acrylic',u:AKP+'fire-rated-series/ac607-fire-stop-acrylic-sealant'},
+    {n:'AS606 Siliconized',u:AKP+'sealants/as606-siliconized-sealant'},
+    {n:'AC580 Rapid Seal',u:AKP+'sealants/ac580-rapid-seal'},
+    {n:'Tile Grout',u:AKP+'sealants/tile-grout'},
+  ]},
+  { category: 'Yapıştırıcılar & Montaj', brand: 'akfix', color: 'var(--accent-blue)', products: [
+    {n:'MS High Tack AST',u:AKP+'adhesives-glues/ms-high-tack-ast-polymer'},
+    {n:'MS Fast & Strong AST',u:AKP+'adhesives-glues/ms-fast-strong-ast-polymer'},
+    {n:'510 No Nail PU',u:AKP+'adhesives-glues/510-no-nail-pu-montage-adhesive'},
+    {n:'610 PU Express Montage',u:AKP+'adhesives-glues/610-pu-express-montage-adhesive-transparent'},
+    {n:'612J Aluminum Corner',u:AKP+'adhesives-glues/612j-aluminum-corner-joint-pu-express'},
+    {n:'495 No Nail High Tack',u:AKP+'adhesives-glues/495-no-nail-high-initial-tack'},
+    {n:'308 Acrylic Montage',u:AKP+'adhesives-glues/308-acrylic-montage-adhesive-instant-grab'},
+    {n:'310 Montage Water Based',u:AKP+'adhesives-glues/310-montage-adhesive-water-based-paintable'},
+    {n:'312P Panel (XPS/EPS)',u:AKP+'adhesives-glues/312p-panel-adhesive-xps-eps-and-plaster-board'},
+    {n:'320C Cornice Adhesive',u:AKP+'adhesives-glues/320c-cornice-adhesive'},
+    {n:'900N Mirror Adhesive',u:AKP+'adhesives-glues/900n-neutral-mirror-adhesive'},
+    {n:'480 Pedestal Adhesive',u:AKP+'adhesives-glues/480-pedestal-adhesive'},
+    {n:'705 Universal Fast',u:AKP+'adhesives-glues/705-universal-fast-adhesive'},
+    {n:'702 Super Glue',u:AKP+'adhesives-glues/702-super-glue'},
+    {n:'740 All Bond Glue',u:AKP+'adhesives-glues/740-all-bond-glue'},
+    {n:'202 Contact Adhesive',u:AKP+'adhesives-glues/202-universal-contact-adhesive'},
+    {n:'WA500 Wallpaper',u:AKP+'adhesives-glues/wa500-heavy-duty-wallpaper-adhesive-premium'},
+    {n:'Curtain Rail Adhesive',u:AKP+'adhesives-glues/curtain-rail-adhesive-ast-polymer'},
+  ]},
+  { category: 'Epoksi & Kimyasal Ankraj', brand: 'akfix', color: 'var(--accent-violet)', products: [
+    {n:'E300 Waterproof Epoxy',u:AKP+'adhesives-glues/e300-waterproof-epoxy'},
+    {n:'E340 Quick Set Epoxy',u:AKP+'adhesives-glues/e340-quick-setting-epoxy'},
+    {n:'E350 Steel Epoxy Putty',u:AKP+'adhesives-glues/e350-steel-epoxy-quick-fix-putty'},
+    {n:'C900 Chem Anchor Polyester',u:AKP+'adhesives-glues/c900-chemical-anchor-polyester'},
+    {n:'C920 Chem Anchor Epoxy',u:AKP+'adhesives-glues/c920-chemical-anchor-epoxy-acrylate-styrene-free'},
+    {n:'C950 Pure Epoxy Anchor',u:AKP+'adhesives-glues/c950-chemical-anchor-pure-epoxy'},
+  ]},
+  { category: 'Ahşap Tutkalları', brand: 'akfix', color: 'var(--accent-emerald)', products: [
+    {n:'D2 PVA White Glue',u:AKP+'adhesives-glues/d2-pva-white-glue-super-frame-work'},
+    {n:'D3 PVAc Super Wood',u:AKP+'adhesives-glues/d3-pvac-super-wood-glue'},
+    {n:'PA360 PUR Marine Wood',u:AKP+'adhesives-glues/pa360-pur-wood-glue-marine-adhesive'},
+    {n:'360FC Fast Cure PUR',u:AKP+'adhesives-glues/360fc-fast-cure-pur-wood-glue'},
+    {n:'PA370 Express PU Wood',u:AKP+'adhesives-glues/pa370-express-pu-wood-glue-marine-adhesive'},
+    {n:'PA380 Heavy Duty Marine',u:AKP+'adhesives-glues/pa380-heavy-duty-pur-marine-adhesive'},
+    {n:'968P Wood Adhesive',u:AKP+'adhesives-glues/968p-wood-adhesive'},
+  ]},
+  { category: 'Zemin Yapıştırıcıları', brand: 'akfix', color: 'var(--accent-amber)', products: [
+    {n:'HB260 Hybrid Flooring',u:AKP+'adhesives-glues/hb260-hybrid-flooring-adhesive'},
+    {n:'HB262 Hybrid Wood Floor',u:AKP+'adhesives-glues/hb262-hybrid-wood-flooring-adhesive'},
+    {n:'PU ADH 315 Parquet',u:AKP+'adhesives-glues/pu-adh-315-rubber-tile-and-parquet-adhesive'},
+    {n:'966P Subfloor PU',u:AKP+'adhesives-glues/966p-subfloor-pu-adhesive'},
+    {n:'PA550 PVC Membrane Press',u:AKP+'adhesives-glues/pa550-pvc-membrane-press-adhesive-pu-dispersion-based'},
+  ]},
+  { category: 'Hot Melt & Kenar Bantlama', brand: 'akfix', color: 'var(--accent-rose)', products: [
+    {n:'HM226 EVA Curve Edge',u:AKP+'adhesives-glues/hm226-eva-hot-melt-curve-edge-banding-adhesive'},
+    {n:'HM774 EVA Straight Edge',u:AKP+'adhesives-glues/hm774-eva-hot-melt-straight-edge-banding-adhesive'},
+    {n:'HM788 EVA Straight Edge',u:AKP+'adhesives-glues/hm788-eva-hot-melt-straight-edge-banding-adhesive'},
+    {n:'HM208 Hot Melt Stick',u:AKP+'adhesives-glues/hm208-hot-melt-stick'},
+  ]},
+  { category: 'PU Köpükler', brand: 'akfix', color: 'var(--accent-emerald)', products: [
+    {n:'805 PU Foam (Pipet)',u:AKP+'pu-foams/805-pu-foam-straw-multi-purpose'},
+    {n:'805P PU Gun Foam',u:AKP+'pu-foams/805p-pu-gun-foam-multi-purpose'},
+    {n:'806 Mega Foam',u:AKP+'pu-foams/806-mega-pu-foam'},
+    {n:'850 Winter Foam',u:AKP+'pu-foams/850-winter-pu-gun-foam'},
+    {n:'888P Flexible Foam',u:AKP+'pu-foams/888p-flexible-pu-foam'},
+    {n:'890 Multi-Position',u:AKP+'pu-foams/890-multi-position-multi-purpose-pu-foam'},
+    {n:'940 Max Expanding',u:AKP+'pu-foams/940-maximum-expanding-foam'},
+    {n:'960 Adhesive Foam',u:AKP+'pu-foams/960-adhesive-pu-foam-straw'},
+    {n:'960P Adhesive Gun',u:AKP+'adhesives-glues/960p-adhesive-pu-gun-foam'},
+    {n:'960C Combo Adhesive',u:AKP+'adhesives-glues/960c-combo-adhesive-pu-foam'},
+    {n:'962P Concrete & Brick',u:AKP+'adhesives-glues/962p-concrete-stone-brick-pu-adhesive'},
+    {n:'965P Roof & Tile PU',u:AKP+'adhesives-glues/965p-roof-tile-pu-adhesive'},
+    {n:'967P Fast Adhesive',u:AKP+'adhesives-glues/967p-fast-adhesive'},
+    {n:'ThermCoat Sprey Yalıtım',u:AKP+'pu-foams/thermcoat-thermal-acoustic-insulation-pu-spray-foam-straw'},
+    {n:'All In One Foam',u:AKP+'pu-foams/all-in-one-pu-foam'},
+  ]},
+  { category: 'Yangın Serisi (Fire Rated)', brand: 'akfix', color: 'var(--accent-rose)', products: [
+    {n:'N920 Intumescent Silicone',u:AKP+'fire-rated-series/n920-intumescent-fire-rated-neutral-silicone-sealant'},
+    {n:'140F Fire Silicone',u:AKP+'fire-rated-series/140f-fire-rated-silicone-sealant'},
+    {n:'P636 Fire PU Sealant',u:AKP+'fire-rated-series/p636-fire-rated-pu-sealant'},
+    {n:'AC607 Fire Stop Acrylic',u:AKP+'fire-rated-series/ac607-fire-stop-acrylic-sealant'},
+    {n:'820 B1 Fire Foam',u:AKP+'fire-rated-series/820-b1-fire-rated-pu-foam-straw'},
+    {n:'820P B1 Fire Gun',u:AKP+'fire-rated-series/820p-b1-fire-rated-pu-gun-foam'},
+    {n:'840 B2 Fire Foam',u:AKP+'fire-rated-series/840-b2-fire-rated-pu-foam-straw'},
+    {n:'840P B2 Fire Gun',u:AKP+'fire-rated-series/840p-b2-fire-rated-pu-gun-foam'},
+  ]},
+  { category: 'Taş & Mermer', brand: 'akfix', color: 'var(--accent-amber)', products: [
+    {n:'G400 Granite & Marble',u:AKP+'adhesives-glues/g400-granite-and-marble-adhesive'},
+    {n:'G500 Granite Liquid',u:AKP+'adhesives-glues/g500-granite-and-marble-adhesive-liquid'},
+    {n:'710 Stone & Marble Kit',u:AKP+'adhesives-glues/710-stone-marble-kit-fast-adhesive'},
+  ]},
+  { category: 'PVC Çimento & Boru', brand: 'akfix', color: 'var(--accent-cyan)', products: [
+    {n:'R305 PVC Cement',u:AKP+'adhesives-glues/r305-pvc-cement'},
+    {n:'R306 PVC Cement',u:AKP+'adhesives-glues/r306-pvc-cement'},
+  ]},
+  { category: 'Kaplama & Su Yalıtım', brand: 'akfix', color: 'var(--accent-violet)', products: [
+    {n:'Polyurea HB1010 Hybrid',u:'https://www.akkim.net/en'},
+    {n:'ThermCoat Sprey Yalıtım',u:AKP+'pu-foams/thermcoat-thermal-acoustic-insulation-pu-spray-foam-straw'},
+    {n:'602 Bitum Sealant',u:AKP+'sealants/602-bitum-sealant'},
+  ]},
 ];
 
 function renderProductTree(filter) {
@@ -1094,8 +1200,9 @@ function renderProductTree(filter) {
   productData.filter(c => filter === 'all' || c.brand === filter || c.brand === 'both').forEach((cat, i) => {
     const d = document.createElement('div');
     d.className = 'comp-category';
-    d.innerHTML = `<div class="comp-category-header" onclick="this.nextElementSibling.classList.toggle('open')"><div class="comp-cat-left"><span style="width:10px;height:10px;border-radius:3px;background:${cat.color};display:inline-block"></span><div class="comp-cat-name" style="font-size:13px">${cat.category}</div></div><span style="font-size:11px;color:var(--text-muted);font-family:'Space Mono'">${cat.products.length} ürün</span></div>
-    <div class="comp-body ${i < 4 ? 'open' : ''}" style="padding:10px 16px;flex-wrap:wrap;display:${i < 4 ? 'flex' : 'none'};gap:6px">${cat.products.map(p => `<span class="product-tag ${cat.brand === 'akfix' ? 'akfix-tag' : 'akkim-tag'}">${p}</span>`).join('')}</div>`;
+    const bodyId = 'ptree-' + i;
+    d.innerHTML = `<div class="comp-category-header" onclick="var b=document.getElementById('${bodyId}');if(b.style.display==='flex'){b.style.display='none'}else{b.style.display='flex'}"><div class="comp-cat-left"><span style="width:10px;height:10px;border-radius:3px;background:${cat.color};display:inline-block"></span><div class="comp-cat-name" style="font-size:13px">${cat.category}</div></div><span style="font-size:11px;color:var(--text-muted);font-family:'Space Mono'">${cat.products.length} ürün ▾</span></div>
+    <div id="${bodyId}" style="padding:10px 16px;flex-wrap:wrap;display:${i < 3 ? 'flex' : 'none'};gap:6px">${cat.products.map(p => typeof p === 'object' ? `<a href="${p.u}" target="_blank" class="product-tag akfix-tag" style="text-decoration:none">🔵 ${p.n} ↗</a>` : `<span class="product-tag akfix-tag">${p}</span>`).join('')}</div>`;
     tree.appendChild(d);
   });
 }
