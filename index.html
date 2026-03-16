@@ -251,7 +251,7 @@
     </div>
     <div class="nav-item" data-page="competitors">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Rakip İstihbaratı
+      Rakip Şirketlerin Analizi
     </div>
 
     <div class="nav-section-label">Sika vs Akkim/Akfix</div>
@@ -483,6 +483,8 @@
         </div>
       </div>
 
+      <div class="card" style="margin-bottom:16px" id="regionNews"></div>
+
       <div class="card" style="margin-top:-8px">
         <div class="card-header"><div class="card-title">Sika 2028 Stratejik Hedefler</div></div>
         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -496,22 +498,30 @@
 
     <!-- ══════ COMPETITORS ══════ -->
     <div class="page" id="page-competitors">
-      <div class="page-header"><h2>Rakip İstihbaratı</h2><p>Türkiye inşaat kimyasalları sektöründe ana rakipler</p></div>
+      <div class="page-header"><h2>Rakip Şirketlerin Analizi</h2><p>Global ve bölgesel yapı kimyasalı şirketleri — rekabet analizi</p></div>
       <div class="filter-bar">
         <button class="filter-btn active" onclick="filterComp('all',this)">Tümü</button>
-        <button class="filter-btn" onclick="filterComp('tr',this)">Yerli</button>
         <button class="filter-btn" onclick="filterComp('global',this)">Global</button>
+        <button class="filter-btn" onclick="filterComp('local',this)">Bölgesel</button>
       </div>
       <div class="card">
         <table class="data-table">
-          <thead><tr><th>Şirket</th><th>Tip</th><th>Ana Güç</th><th>Sosyal</th><th>Tehdit</th></tr></thead>
+          <thead><tr><th>Şirket</th><th>Ölçek</th><th>Ana Güç</th><th>Rekabet Gücü</th></tr></thead>
           <tbody id="compTable">
-            <tr data-type="tr"><td><div class="company-cell"><div class="company-avatar" style="background:#e74c3c">KL</div><div><strong style="color:var(--text-primary)">Kalekim</strong><br><span style="font-size:11px">Kale Grubu</span></div></div></td><td><span class="tag tag-emerald">Yerli</span></td><td style="font-size:12px">Güçlü bayii ağı</td><td style="font-family:'Space Mono';font-size:12px">285K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:85%;background:var(--accent-rose)"></div></div><span style="font-family:'Space Mono';font-size:11px">85</span></div></td></tr>
-            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#f39c12">SK</div><div><strong style="color:var(--text-primary)">Sika Türkiye</strong><br><span style="font-size:11px">Sika AG</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Geniş ürün yelpazesi</td><td style="font-family:'Space Mono';font-size:12px">120K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:80%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">80</span></div></td></tr>
-            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#2ecc71">BS</div><div><strong style="color:var(--text-primary)">Bostik</strong><br><span style="font-size:11px">Arkema</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Yapıştırıcı teknolojisi</td><td style="font-family:'Space Mono';font-size:12px">45K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:60%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">60</span></div></td></tr>
-            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#3498db">MP</div><div><strong style="color:var(--text-primary)">Mapei</strong><br><span style="font-size:11px">Mapei SpA</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Premium seramik yapıştırıcı</td><td style="font-family:'Space Mono';font-size:12px">180K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:70%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">70</span></div></td></tr>
-            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#9b59b6">WB</div><div><strong style="color:var(--text-primary)">Weber</strong><br><span style="font-size:11px">Saint-Gobain</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Mantolama & sıva</td><td style="font-family:'Space Mono';font-size:12px">95K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:65%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">65</span></div></td></tr>
-            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#e67e22">HK</div><div><strong style="color:var(--text-primary)">Henkel</strong><br><span style="font-size:11px">Ceresit / Pattex</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Perakende dağıtım</td><td style="font-family:'Space Mono';font-size:12px">150K+</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:72%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">72</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#d4a017">SK</div><div><strong style="color:var(--text-primary)">Sika AG</strong><br><span style="font-size:11px">🇨🇭 İsviçre — CHF 11.2B</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">102 ülke, 400+ fabrika, MBCC akizisyonu</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:95%;background:var(--accent-blue)"></div></div><span style="font-family:'Space Mono';font-size:11px">95</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#e74c3c">SG</div><div><strong style="color:var(--text-primary)">Saint-Gobain</strong><br><span style="font-size:11px">🇫🇷 Fransa — Weber, Fosroc</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Mantolama, sıva, Fosroc akizisyonu ($1B)</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:88%;background:var(--accent-blue)"></div></div><span style="font-family:'Space Mono';font-size:11px">88</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#3498db">MP</div><div><strong style="color:var(--text-primary)">Mapei SpA</strong><br><span style="font-size:11px">🇮🇹 İtalya — €4.1B</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Premium seramik yapıştırıcı, zemin, su yalıtım</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:82%;background:var(--accent-blue)"></div></div><span style="font-family:'Space Mono';font-size:11px">82</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#e67e22">HK</div><div><strong style="color:var(--text-primary)">Henkel AG</strong><br><span style="font-size:11px">🇩🇪 Almanya — Ceresit, Pattex, Loctite</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Perakende dağıtım gücü, marka portföyü</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:78%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">78</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#2ecc71">BS</div><div><strong style="color:var(--text-primary)">Bostik (Arkema)</strong><br><span style="font-size:11px">🇫🇷 Fransa — €2.3B</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Yapıştırıcı teknolojisi, İskandinav gücü</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:68%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">68</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#1abc9c">RP</div><div><strong style="color:var(--text-primary)">RPM International</strong><br><span style="font-size:11px">🇺🇸 ABD — $7.3B — Tremco, Euclid</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Çatı, su yalıtım, beton tamir — ABD lideri</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:75%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">75</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#9b59b6">HB</div><div><strong style="color:var(--text-primary)">H.B. Fuller</strong><br><span style="font-size:11px">🇺🇸 ABD — $3.5B</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Endüstriyel yapıştırıcı, hotmelt, laminasyon</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:65%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">65</span></div></td></tr>
+            <tr data-type="global"><td><div class="company-cell"><div class="company-avatar" style="background:#34495e">AR</div><div><strong style="color:var(--text-primary)">Ardex</strong><br><span style="font-size:11px">🇩🇪 Almanya — €900M</span></div></div></td><td><span class="tag tag-blue">Global</span></td><td style="font-size:12px">Seramik yapıştırıcı, zemin, fuga — premium</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:62%;background:var(--accent-amber)"></div></div><span style="font-family:'Space Mono';font-size:11px">62</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#c0392b">PI</div><div><strong style="color:var(--text-primary)">Pidilite Industries</strong><br><span style="font-size:11px">🇮🇳 Hindistan — Fevicol markası</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">Hindistan & Güney Asya yapıştırıcı lideri</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:58%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">58</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#2980b9">QK</div><div><strong style="color:var(--text-primary)">Quikrete Holdings</strong><br><span style="font-size:11px">🇺🇸 ABD — $2B+ — Beton & harç</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">ABD beton ürünleri lideri, perakende güçlü</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:55%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">55</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#8e44ad">LT</div><div><strong style="color:var(--text-primary)">Laticrete International</strong><br><span style="font-size:11px">🇺🇸 ABD — $500M+ — Seramik & su yalıtım</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">Seramik yapıştırıcı, su yalıtım, zemin — ABD/Asya</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:52%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">52</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#16a085">DP</div><div><strong style="color:var(--text-primary)">DAP Products</strong><br><span style="font-size:11px">🇺🇸 ABD — $600M+ — Sealant & yapıştırıcı</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">ABD perakende sealant lideri — Home Depot, Lowe's</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:50%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">50</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#d35400">YH</div><div><strong style="color:var(--text-primary)">Beijing Oriental Yuhong</strong><br><span style="font-size:11px">🇨🇳 Çin — Su yalıtım lideri</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">Çin su yalıtım pazarı lideri, membran üretimi</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:48%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">48</span></div></td></tr>
+            <tr data-type="local"><td><div class="company-cell"><div class="company-avatar" style="background:#27ae60">FL</div><div><strong style="color:var(--text-primary)">Flex Seal (Swift Response)</strong><br><span style="font-size:11px">🇺🇸 ABD — DTC / Viral marka</span></div></div></td><td><span class="tag tag-violet">Bölgesel</span></td><td style="font-size:12px">Viral pazarlama, tüketiciye doğrudan satış (DTC)</td><td><div style="display:flex;align-items:center;gap:8px"><div class="score-bar"><div class="score-fill" style="width:35%;background:var(--accent-emerald)"></div></div><span style="font-family:'Space Mono';font-size:11px">35</span></div></td></tr>
           </tbody>
         </table>
       </div>
@@ -1005,7 +1015,7 @@
 const navItems = document.querySelectorAll('.nav-item[data-page]');
 const pages = document.querySelectorAll('.page');
 const pageTitle = document.getElementById('pageTitle');
-const titles = { overview:'Dashboard', market:'Pazar Analizi', competitors:'Rakip İstihbaratı', 'sika-compare':'Sika vs Akkim/Akfix', products:'Ürün Portföyü', 'us-market':'ABD Prospect DB', reports:'Raporlar & Çıktılar', acquisitions:'Global Akizisyonlar', news:'Sektör Haberleri', regulation:'Regülasyon & Hammadde', 'sales-kpi':'Satış KPI Dashboard', 'apollo-import':'Apollo CSV Import', 'pdf-builder':'PDF Rapor Oluştur' };
+const titles = { overview:'Dashboard', market:'Pazar Analizi', competitors:'Rakip Şirketlerin Analizi', 'sika-compare':'Sika vs Akkim/Akfix', products:'Ürün Portföyü', 'us-market':'ABD Prospect DB', reports:'Raporlar & Çıktılar', acquisitions:'Global Akizisyonlar', news:'Sektör Haberleri', regulation:'Regülasyon & Hammadde', 'sales-kpi':'Satış KPI Dashboard', 'apollo-import':'Apollo CSV Import', 'pdf-builder':'PDF Rapor Oluştur' };
 
 function navigateTo(id) {
   navItems.forEach(n => n.classList.remove('active'));
@@ -1463,25 +1473,23 @@ function filterComp(type, btn) {
 
 // ══════ ACQUISITIONS DATA ══════
 const acquisitions = [
-  { date: 'Oca 2026', co: 'sika', buyer: 'Sika AG', target: 'Finja (İsveç)', desc: 'Nordik bölgesinde beton & prefabrik ürünlerde güçlenme', value: 'Açıklanmadı', region: '🇸🇪 İsveç' },
-  { date: 'Kas 2025', co: 'sika', buyer: 'Sika AG', target: 'Awazil Al Khaleej (Suudi Arabistan)', desc: 'Suudi & GCC inşaat pazarında genişleme', value: 'Açıklanmadı', region: '🇸🇦 S.Arabistan' },
-  { date: 'Haz 2025', co: 'sika', buyer: 'Sika AG', target: 'Gulf Additive Factory (Katar)', desc: 'Beton katkıları, harç, döşeme, su yalıtım, EIFS üretimi', value: 'Açıklanmadı', region: '🇶🇦 Katar' },
-  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'Elmich (Singapur)', desc: 'Yeşil çatı ve peyzaj drenaj çözümleri', value: 'Açıklanmadı', region: '🇸🇬 Singapur' },
-  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'Cromar (İngiltere)', desc: 'Çatı kaplama ve su yalıtım ürünleri', value: 'Açıklanmadı', region: '🇬🇧 İngiltere' },
-  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'HPS (ABD)', desc: 'Yüksek performanslı yapıştırıcılar', value: 'Açıklanmadı', region: '🇺🇸 ABD' },
-  { date: '2025', co: 'sika', buyer: 'Sika AG', target: 'Akkim Yapı Kimyasalları (Türkiye)', desc: 'Yapıştırıcı & sealant segmentinde global genişleme — BİZİM ŞİRKETİMİZ', value: 'Açıklanmadı', region: '🇹🇷 Türkiye', highlight: true },
-  { date: 'Şub 2025', co: 'saint-gobain', buyer: 'Saint-Gobain', target: 'Fosroc International (BAE)', desc: 'Hindistan & Ortadoğu inşaat kimyasalları lideri', value: '~$1.025B', region: '🇦🇪 BAE / 🇮🇳 Hindistan' },
-  { date: 'Ağu 2024', co: 'sika', buyer: 'Sika AG', target: 'Vinaldom (Dominik Cumhuriyeti)', desc: 'Karayibler beton yapıştırıcı ve katkı pazarı', value: 'Açıklanmadı', region: '🇩🇴 Dominik C.' },
-  { date: 'Nis 2024', co: 'sika', buyer: 'Sika AG', target: 'Kwik Bond Polymers (ABD)', desc: 'Köprü güverteleri için polimer beton tamir sistemleri', value: 'Açıklanmadı', region: '🇺🇸 ABD' },
-  { date: '2024', co: 'sika', buyer: 'Sika AG', target: 'Chema Group (Peru)', desc: 'Latin Amerika inşaat kimyasalları', value: 'Açıklanmadı', region: '🇵🇪 Peru' },
-  { date: 'Ağu 2024', co: 'mapei', buyer: 'Mapei', target: 'Beton katkı fabrikası (Danimarka) + Diaplas (Kanada)', desc: 'Beton katkıları & zemin/duvar profilleri', value: 'Açıklanmadı', region: '🇩🇰 / 🇨🇦' },
-  { date: '2024', co: 'mapei', buyer: 'Mapei', target: 'Bitumat (Suudi Arabistan)', desc: 'NEOM dahil mega projeler için Tabuk fabrikası', value: 'Açıklanmadı', region: '🇸🇦 S.Arabistan' },
-  { date: '2024', co: 'mapei', buyer: 'Mapei', target: 'Arta plast RJ (İsveç)', desc: 'Profil & aksesuar genişlemesi', value: 'Açıklanmadı', region: '🇸🇪 İsveç' },
-  { date: '2024', co: 'other', buyer: 'JSW Cement', target: 'İnşaat kimyasalı segmentine giriş (Hindistan)', desc: 'Pan-India dağıtım ağıyla yeni segment', value: 'Açıklanmadı', region: '🇮🇳 Hindistan' },
-  { date: 'May 2023', co: 'sika', buyer: 'Sika AG', target: 'MBCC Group (eski BASF Const.)', desc: 'Dev akizisyon — Global beton katkı & su yalıtım', value: '€5.3B', region: '🌍 Global' },
-  { date: '2023', co: 'henkel', buyer: 'Henkel AG', target: 'Sırbistan fabrika yatırımı', desc: 'Çevre dostu yapıştırıcı üretim kapasitesi', value: '€130M', region: '🇷🇸 Sırbistan' },
-  { date: '2023', co: 'sika', buyer: 'Sika AG', target: 'Sika + Giatec Scientific (yatırım)', desc: 'AI-tabanlı beton izleme teknolojisi', value: 'Açıklanmadı', region: '🇨🇦 Kanada' },
-  { date: 'Ara 2019', co: 'bostik', buyer: 'Bostik (Arkema)', target: 'LIP Bygningsartikler (Danimarka)', desc: 'İskandinav inşaat kimyasalları, karbon-nötr üretim', value: '~$30M', region: '🇩🇰 Danimarka' },
+  { date: 'Oca 2026', co: 'sika', buyer: 'Sika AG', target: 'Finja (İsveç)', desc: 'Nordik bölgesinde beton & prefabrik ürünlerde güçlenme', value: 'Açıklanmadı', region: '🇸🇪 İsveç', url:'https://www.adhesivesmag.com/articles/101831-2025-asi-top-20-sika' },
+  { date: 'Kas 2025', co: 'sika', buyer: 'Sika AG', target: 'Awazil Al Khaleej (S.Arabistan)', desc: 'Suudi & GCC inşaat pazarında genişleme', value: 'Açıklanmadı', region: '🇸🇦 S.Arabistan', url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: 'Haz 2025', co: 'sika', buyer: 'Sika AG', target: 'Gulf Additive Factory (Katar)', desc: 'Beton katkıları, harç, döşeme, su yalıtım, EIFS üretimi', value: 'Açıklanmadı', region: '🇶🇦 Katar', url:'https://www.sika.com/en/media/media-releases/2025/sika-acquires-renowned-construction-chemicals-company-in-qatar.html' },
+  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'Elmich (Singapur)', desc: 'Yeşil çatı ve peyzaj drenaj çözümleri', value: 'Açıklanmadı', region: '🇸🇬 Singapur', url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'Cromar (İngiltere)', desc: 'Çatı kaplama ve su yalıtım ürünleri', value: 'Açıklanmadı', region: '🇬🇧 İngiltere', url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: '2025 H1', co: 'sika', buyer: 'Sika AG', target: 'HPS (ABD)', desc: 'Yüksek performanslı yapıştırıcılar', value: 'Açıklanmadı', region: '🇺🇸 ABD', url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: '2025', co: 'sika', buyer: 'Sika AG', target: 'Akkim Yapı Kimyasalları (Türkiye)', desc: 'Yapıştırıcı & sealant segmentinde global genişleme — BİZİM ŞİRKETİMİZ', value: 'Açıklanmadı', region: '🇹🇷 Türkiye', highlight: true, url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: 'Şub 2025', co: 'saint-gobain', buyer: 'Saint-Gobain', target: 'Fosroc International (BAE)', desc: 'Hindistan & Ortadoğu inşaat kimyasalları lideri', value: '~$1.025B', region: '🇦🇪 BAE / 🇮🇳 Hindistan', url:'https://www.saint-gobain.com/' },
+  { date: 'Ağu 2024', co: 'sika', buyer: 'Sika AG', target: 'Vinaldom (Dominik Cumhuriyeti)', desc: 'Karayibler beton yapıştırıcı ve katkı pazarı', value: 'Açıklanmadı', region: '🇩🇴 Dominik C.', url:'https://www.sika.com/en/media/media-releases/2024.html' },
+  { date: 'Nis 2024', co: 'sika', buyer: 'Sika AG', target: 'Kwik Bond Polymers (ABD)', desc: 'Köprü güverteleri için polimer beton tamir sistemleri', value: 'Açıklanmadı', region: '🇺🇸 ABD', url:'https://www.sika.com/en/media/media-releases/2024.html' },
+  { date: '2024', co: 'sika', buyer: 'Sika AG', target: 'Chema Group (Peru)', desc: 'Latin Amerika inşaat kimyasalları', value: 'Açıklanmadı', region: '🇵🇪 Peru', url:'https://www.sika.com/en/media/media-releases/2024.html' },
+  { date: 'Ağu 2024', co: 'mapei', buyer: 'Mapei', target: 'Beton katkı fab. (Danimarka) + Diaplas (Kanada)', desc: 'Beton katkıları & zemin/duvar profilleri', value: 'Açıklanmadı', region: '🇩🇰 / 🇨🇦', url:'https://www.mapei.com/' },
+  { date: '2024', co: 'mapei', buyer: 'Mapei', target: 'Bitumat (Suudi Arabistan)', desc: 'NEOM dahil mega projeler için Tabuk fabrikası', value: 'Açıklanmadı', region: '🇸🇦 S.Arabistan', url:'https://www.mapei.com/' },
+  { date: 'May 2023', co: 'sika', buyer: 'Sika AG', target: 'MBCC Group (eski BASF)', desc: 'Dev akizisyon — Global beton katkı & su yalıtım', value: '€5.3B', region: '🌍 Global', url:'https://www.sika.com/en/media/media-releases/2025.html' },
+  { date: '2023', co: 'henkel', buyer: 'Henkel AG', target: 'Sırbistan fabrika yatırımı', desc: 'Çevre dostu yapıştırıcı üretim kapasitesi', value: '€130M', region: '🇷🇸 Sırbistan', url:'https://www.henkel.com/' },
+  { date: '2023', co: 'sika', buyer: 'Sika AG', target: 'Giatec Scientific (yatırım)', desc: 'AI-tabanlı beton izleme teknolojisi', value: 'Açıklanmadı', region: '🇨🇦 Kanada', url:'https://www.globenewswire.com/news-release/2026/03/03/3247989/0/en/SIKA-EXPANDS-ITS-DIGITAL-PRODUCT-PORTFOLIO-THROUGH-GLOBAL-COMMERCIAL-PARTNERSHIP-WITH-GIATEC.html' },
+  { date: 'Ara 2019', co: 'bostik', buyer: 'Bostik (Arkema)', target: 'LIP Bygningsartikler (Danimarka)', desc: 'İskandinav inşaat kimyasalları, karbon-nötr üretim', value: '~$30M', region: '🇩🇰 Danimarka', url:'https://www.bostik.com/' },
 ];
 
 function renderAcquisitions(filter) {
@@ -1500,7 +1508,7 @@ function renderAcquisitions(filter) {
       <div style="position:relative;padding-left:20px;margin-bottom:16px;">
         <div style="position:absolute;left:-6px;top:14px;width:12px;height:12px;border-radius:50%;background:${color};border:2px solid var(--bg-primary);z-index:1"></div>
         ${i < items.length - 1 ? '<div style="position:absolute;left:-1px;top:26px;bottom:-16px;width:2px;background:var(--border)"></div>' : ''}
-        <div style="background:${bgColor};border:1px solid ${borderColor};border-radius:var(--radius-sm);padding:14px 18px;transition:border-color 0.2s" onmouseover="this.style.borderColor='var(--border-light)'" onmouseout="this.style.borderColor='${borderColor}'">
+        <a href="${a.url || 'https://www.sika.com/en/media/media-releases.html'}" target="_blank" style="display:block;text-decoration:none;background:${bgColor};border:1px solid ${borderColor};border-radius:var(--radius-sm);padding:14px 18px;transition:all 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.04)" onmouseover="this.style.borderColor='var(--accent-blue)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='${borderColor}';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
             <div style="display:flex;align-items:center;gap:8px">
               <span style="font-size:11px;color:${color};font-weight:700;font-family:'Space Mono'">${a.date}</span>
@@ -1511,11 +1519,12 @@ function renderAcquisitions(filter) {
             <div style="display:flex;gap:8px;align-items:center">
               <span style="font-size:11px;color:var(--text-muted)">${a.region}</span>
               ${a.value !== 'Açıklanmadı' ? `<span class="tag tag-emerald">${a.value}</span>` : ''}
+              <span style="font-size:10px;color:var(--accent-blue)">↗</span>
             </div>
           </div>
           <div style="font-size:12px;color:var(--text-secondary)">${a.desc}</div>
           ${isHighlight ? '<div style="margin-top:6px;font-size:11px;color:var(--accent-rose);font-weight:600">⭐ Akkim — Sika ailesine katılım</div>' : ''}
-        </div>
+        </a>
       </div>
     `;
   });
@@ -1838,22 +1847,28 @@ function exportApolloFiltered() {
 const regionData = {
   all: { title:'🌍 Global Özet', share:'100%', size:'$85.2B', cagr:'6.8%', desc:'Global inşaat kimyasalları pazarı hızla büyüyor. Asya-Pasifik en büyük pay, Kuzey Amerika en yüksek marj.',
     leaders:[{n:'Sika AG',c:'🇨🇭',s:'CHF 11.2B'},{n:'BASF/MBCC',c:'🇩🇪',s:'€6.2B'},{n:'Saint-Gobain',c:'🇫🇷',s:'€5.8B'},{n:'Mapei',c:'🇮🇹',s:'€4.1B'},{n:'RPM International',c:'🇺🇸',s:'$7.3B'},{n:'Henkel',c:'🇩🇪',s:'€5.6B'}],
-    products:[{n:'Beton Katkıları',p:'28%'},{n:'Su Yalıtım',p:'22%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Zemin Sistemleri',p:'14%'},{n:'Çatı Sistemleri',p:'10%'},{n:'Diğer',p:'6%'}]},
+    products:[{n:'Beton Katkıları',p:'28%'},{n:'Su Yalıtım',p:'22%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Zemin Sistemleri',p:'14%'},{n:'Çatı Sistemleri',p:'10%'},{n:'Diğer',p:'6%'}],
+    news:[{t:'Pazar 2031\'de $118.5B\'a ulaşacak — CAGR %5',u:'https://www.adhesivesmag.com/'},{t:'ECHA PFAS kısıtlaması sealant sektörünü etkileyecek',u:'https://echa.europa.eu/news-and-events/news-alerts/all-news'},{t:'EFCC: Yeni CPR regülasyonu dijitalleşme ve sürdürülebilirlik odaklı',u:'https://www.efcc.eu/news-and-publications'}]},
   ap: { title:'🌏 Asya-Pasifik', share:'38%', size:'$32.4B', cagr:'7.8%', desc:'Çin ve Hindistan liderliğinde en büyük ve en hızlı büyüyen bölge. Kentleşme, altyapı yatırımları ve konut talebi itici güçler.',
-    leaders:[{n:'Sika (Çin)',c:'🇨🇳',s:'Bölge lideri'},{n:'Pidilite Industries',c:'🇮🇳',s:'₹13,500 Cr'},{n:'Mapei Asia',c:'🇸🇬',s:'Bölgesel'},{n:'Fosroc (Saint-Gobain)',c:'🇮🇳',s:'$1B+'},{n:'JSW Cement',c:'🇮🇳',s:'Yeni giriş'},{n:'TOA Paint',c:'🇹🇭',s:'Bölgesel'}],
-    products:[{n:'Beton Katkıları',p:'35%'},{n:'Seramik Yapıştırıcı',p:'22%'},{n:'Su Yalıtım',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'13%'},{n:'Zemin',p:'6%'},{n:'Diğer',p:'4%'}]},
+    leaders:[{n:'Sika (Çin)',c:'🇨🇳',s:'Bölge lideri'},{n:'Pidilite Industries',c:'🇮🇳',s:'₹13,500 Cr'},{n:'Mapei Asia',c:'🇸🇬',s:'Bölgesel'},{n:'Fosroc (Saint-Gobain)',c:'🇮🇳',s:'$1B+'},{n:'JSW Cement',c:'🇮🇳',s:'Yeni giriş'},{n:'TOA Paint',c:'🇹🇭',s:'Bölgesel'},{n:'Beijing Oriental Yuhong',c:'🇨🇳',s:'Su Yalıtım Lideri'}],
+    products:[{n:'Beton Katkıları',p:'35%'},{n:'Seramik Yapıştırıcı',p:'22%'},{n:'Su Yalıtım',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'13%'},{n:'Zemin',p:'6%'},{n:'Diğer',p:'4%'}],
+    news:[{t:'Çin: Akıllı şehir yatırımları beton katkı talebini artırıyor',u:'https://www.coatingsworld.com/'},{t:'Hindistan: JSW Cement inşaat kimyasalı segmentine girdi',u:'https://www.adhesivesmag.com/'},{t:'Sika Singapur ve Xi\'an\'da yeni fabrikalar açtı',u:'https://www.sika.com/en/media/media-releases/2025.html'}]},
   eu: { title:'🌍 Avrupa', share:'26%', size:'$22.2B', cagr:'5.2%', desc:'Sürdürülebilirlik odaklı olgun pazar. Düşük VOC, REACH regülasyonları, yeşil bina sertifikaları belirleyici. Renovasyon projeleri ağırlıkta.',
-    leaders:[{n:'Sika AG',c:'🇨🇭',s:'CHF 11.2B'},{n:'Saint-Gobain/Weber',c:'🇫🇷',s:'€5.8B'},{n:'Mapei SpA',c:'🇮🇹',s:'€4.1B'},{n:'Henkel (Ceresit)',c:'🇩🇪',s:'€5.6B'},{n:'Bostik (Arkema)',c:'🇫🇷',s:'€2.3B'},{n:'Ardex',c:'🇩🇪',s:'€900M'}],
-    products:[{n:'Yapıştırıcı & Sealant',p:'26%'},{n:'Su Yalıtım',p:'22%'},{n:'Zemin Sistemleri',p:'18%'},{n:'Beton Katkıları',p:'16%'},{n:'Mantolama/EIFS',p:'12%'},{n:'Çatı',p:'6%'}]},
+    leaders:[{n:'Sika AG',c:'🇨🇭',s:'CHF 11.2B'},{n:'Saint-Gobain/Weber',c:'🇫🇷',s:'€5.8B'},{n:'Mapei SpA',c:'🇮🇹',s:'€4.1B'},{n:'Henkel (Ceresit)',c:'🇩🇪',s:'€5.6B'},{n:'Bostik (Arkema)',c:'🇫🇷',s:'€2.3B'},{n:'Ardex',c:'🇩🇪',s:'€900M'},{n:'Sika → Finja (akizisyon)',c:'🇸🇪',s:'2026'}],
+    products:[{n:'Yapıştırıcı & Sealant',p:'26%'},{n:'Su Yalıtım',p:'22%'},{n:'Zemin Sistemleri',p:'18%'},{n:'Beton Katkıları',p:'16%'},{n:'Mantolama/EIFS',p:'12%'},{n:'Çatı',p:'6%'}],
+    news:[{t:'ECHA: PFAS kısıtlaması sealant & kaplama sektörünü kapsıyor',u:'https://echa.europa.eu/documents/d/guest/qa_pfas_restriction_process_en'},{t:'REACH SVHC listesi 253\'e çıktı — epoksi reçineler etkileniyor',u:'https://www.z2data.com/insights/echa-publishes-february-2026-reach-svhc-update-two-new-substances-added'},{t:'Saint-Gobain Maturix\'i satın aldı — dijital beton izleme',u:'https://www.chemeurope.com/en/news/construction-chemicals/business/order_tr/'}]},
   na: { title:'🌎 Kuzey Amerika', share:'22%', size:'$18.7B', cagr:'6.1%', desc:'ABD altyapı yatırım paketi ($1.2T) büyümeyi hızlandırıyor. Yüksek marjlı ürünler, teknoloji odaklı çözümler hakim.',
-    leaders:[{n:'Sika USA',c:'🇺🇸',s:'Bölge lideri'},{n:'RPM International',c:'🇺🇸',s:'$7.3B'},{n:'H.B. Fuller',c:'🇺🇸',s:'$3.5B'},{n:'DAP Products',c:'🇺🇸',s:'$600M+'},{n:'Quikrete',c:'🇺🇸',s:'$2B+'},{n:'Laticrete',c:'🇺🇸',s:'$500M+'}],
-    products:[{n:'Beton Katkıları',p:'30%'},{n:'Çatı Sistemleri',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'14%'},{n:'Su Yalıtım',p:'12%'},{n:'Diğer',p:'6%'}]},
+    leaders:[{n:'Sika USA',c:'🇺🇸',s:'Bölge lideri'},{n:'RPM International',c:'🇺🇸',s:'$7.3B'},{n:'H.B. Fuller',c:'🇺🇸',s:'$3.5B'},{n:'DAP Products',c:'🇺🇸',s:'$600M+'},{n:'Quikrete',c:'🇺🇸',s:'$2B+'},{n:'Laticrete',c:'🇺🇸',s:'$500M+'},{n:'Mapei USA',c:'🇺🇸',s:'$1B+'}],
+    products:[{n:'Beton Katkıları',p:'30%'},{n:'Çatı Sistemleri',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'14%'},{n:'Su Yalıtım',p:'12%'},{n:'Diğer',p:'6%'}],
+    news:[{t:'Sika Florida\'da süperakışkanlaştırıcı fabrikası açtı',u:'https://www.sika.com/en/media/media-releases/2025.html'},{t:'Mapei: Flooring Sustainability Summit 2026 sponsor',u:'https://www.businesswire.com/newsroom/industry/manufacturing/chemicals-plastics'},{t:'EPA VOC limitleri sıkılaşıyor — düşük emisyonlu ürünlere talep artıyor',u:'https://www.epa.gov/tsca-inventory'}]},
   me: { title:'🌍 Ortadoğu & Afrika', share:'10%', size:'$8.5B', cagr:'8.5%', desc:'NEOM, Vision 2030, Expo gibi mega projeler talebi yüksek tutuyor. Suudi Arabistan ve BAE lider pazarlar.',
-    leaders:[{n:'Sika (GCC)',c:'🇦🇪',s:'Bölge lideri'},{n:'Fosroc',c:'🇦🇪',s:'Saint-Gobain'},{n:'Bitumat',c:'🇸🇦',s:'Mapei grubu'},{n:'Gulf Additive (Sika)',c:'🇶🇦',s:'Yeni akizisyon'},{n:'Awazil (Sika)',c:'🇸🇦',s:'Yeni akizisyon'},{n:'BASF CC',c:'🇦🇪',s:'Bölgesel'}],
-    products:[{n:'Beton Katkıları',p:'32%'},{n:'Su Yalıtım',p:'25%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'12%'},{n:'Çatı',p:'8%'},{n:'Diğer',p:'5%'}]},
+    leaders:[{n:'Sika (GCC)',c:'🇦🇪',s:'Bölge lideri'},{n:'Fosroc (Saint-Gobain)',c:'🇦🇪',s:'$1B akizisyon'},{n:'Bitumat (Mapei)',c:'🇸🇦',s:'NEOM projeleri'},{n:'Gulf Additive (Sika)',c:'🇶🇦',s:'2025 akizisyon'},{n:'Awazil (Sika)',c:'🇸🇦',s:'2025 akizisyon'},{n:'BASF CC',c:'🇦🇪',s:'Bölgesel'}],
+    products:[{n:'Beton Katkıları',p:'32%'},{n:'Su Yalıtım',p:'25%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'12%'},{n:'Çatı',p:'8%'},{n:'Diğer',p:'5%'}],
+    news:[{t:'Sika Katar\'da Gulf Additive Factory\'yi satın aldı',u:'https://www.sika.com/en/media/media-releases/2025/sika-acquires-renowned-construction-chemicals-company-in-qatar.html'},{t:'Sika Suudi Arabistan\'da Awazil\'i bünyesine kattı',u:'https://www.sika.com/en/media/media-releases/2025.html'},{t:'Saint-Gobain Fosroc\'u $1B\'a satın aldı — Hindistan/ME odak',u:'https://www.saint-gobain.com/'}]},
   la: { title:'🌎 Latin Amerika', share:'4%', size:'$3.4B', cagr:'7.2%', desc:'Brezilya ve Meksika liderliğinde büyüyen pazar. Karayibler ve And bölgesi genişleme fırsatları sunuyor.',
     leaders:[{n:'Sika LatAm',c:'🇧🇷',s:'Bölge lideri'},{n:'Vinaldom (Sika)',c:'🇩🇴',s:'Yeni akizisyon'},{n:'Chema Group (Sika)',c:'🇵🇪',s:'Yeni akizisyon'},{n:'Mapei Brasil',c:'🇧🇷',s:'Bölgesel'},{n:'Henkel LatAm',c:'🇲🇽',s:'Bölgesel'},{n:'Euclid (RPM)',c:'🇧🇷',s:'Bölgesel'}],
-    products:[{n:'Beton Katkıları',p:'30%'},{n:'Su Yalıtım',p:'24%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Seramik Yapıştırıcı',p:'14%'},{n:'Zemin',p:'7%'},{n:'Diğer',p:'5%'}]},
+    products:[{n:'Beton Katkıları',p:'30%'},{n:'Su Yalıtım',p:'24%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Seramik Yapıştırıcı',p:'14%'},{n:'Zemin',p:'7%'},{n:'Diğer',p:'5%'}],
+    news:[{t:'Sika Vinaldom\'u satın aldı — Karayibler pazarı',u:'https://www.sika.com/en/media/media-releases/2025.html'},{t:'Sika Chema Group (Peru) akizisyonu tamamlandı',u:'https://www.sika.com/en/media/media-releases/2025.html'},{t:'Brezilya konut talebi beton katkı pazarını büyütüyor',u:'https://www.coatingsworld.com/'}]},
 };
 
 // Simple world map paths (simplified continents)
@@ -1927,6 +1942,13 @@ function selectRegion(key, btn) {
       <span style="font-size:11px;font-family:'Space Mono';color:var(--text-primary);min-width:35px;text-align:right">${p.p}</span>
     </div>
   `).join('');
+  // Region news
+  const newsEl = document.getElementById('regionNews');
+  if(newsEl && r.news) {
+    newsEl.innerHTML = '<div class="card-header"><div class="card-title">📰 Bölge Haberleri</div></div>' + r.news.map(n => `
+      <a href="${n.u}" target="_blank" style="display:block;text-decoration:none;padding:10px 14px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;transition:all .2s;font-size:12.5px;color:var(--text-secondary)" onmouseover="this.style.borderColor='var(--accent-blue)'" onmouseout="this.style.borderColor='var(--border)'">${n.t} <span style="color:var(--accent-blue)">↗</span></a>
+    `).join('');
+  }
   drawMap(key);
 }
 
@@ -1943,7 +1965,7 @@ function initPdfBuilder() {
     {id:'cover',name:'📄 Kapak Sayfası',subs:[], always:true},
     {id:'overview',name:'📊 Dashboard Özeti',subs:['KPI Kartları','Sika 2025 Özeti']},
     {id:'market',name:'🌍 Pazar Analizi',subs:['Global Büyüklük','Asya-Pasifik','Avrupa','Kuzey Amerika','Ortadoğu & Afrika','Latin Amerika','Türkiye']},
-    {id:'competitors',name:'🏢 Rakip İstihbaratı',subs:['Kalekim','Sika TR','Mapei','Weber','Henkel','Bostik','Flex Seal']},
+    {id:'competitors',name:'🏢 Rakip Şirketlerin Analizi',subs:['Sika AG','Saint-Gobain','Mapei','Henkel','Bostik','RPM International','H.B. Fuller','Ardex','Pidilite','Quikrete','Laticrete','DAP Products']},
     {id:'sika-compare',name:'🔄 Sika vs Akfix',subs:['Yapıştırma & Sızdırmazlık','PU Köpükler','Yapıştırıcılar','Yangın Serisi','Su Yalıtım','Beton','Çatı','Zemin','Endüstri','Gap Özeti']},
     {id:'products',name:'📦 Ürün Portföyü',subs:productData.map(c=>c.category)},
     {id:'us-market',name:'🇺🇸 ABD Pazarı',subs:['Hedef Bölgeler','Prospect Listesi','Pipeline']},
