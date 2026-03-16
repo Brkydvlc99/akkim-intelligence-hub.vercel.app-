@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Akkim Yapı Kimyasalları — Sales & Market Intelligence Hub</title>
+<title>Akkim Yapı Kimyasalları — Satış Bilgi Merkezi</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -234,7 +234,7 @@
       <div class="logo-icon">AK</div>
       <div class="logo-text">
         <h1>Akkim Intelligence</h1>
-        <span>Sales & Market Hub</span>
+        <span>Satış Bilgi Merkezi</span>
       </div>
     </div>
   </div>
@@ -295,6 +295,11 @@
       Apollo CSV Import
       <span class="nav-badge" style="background:rgba(139,92,246,0.15);color:var(--accent-violet)">UPLOAD</span>
     </div>
+    <div class="nav-item" data-page="pdf-builder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
+      PDF Rapor Oluştur
+      <span class="nav-badge" style="background:rgba(225,29,72,0.1);color:var(--accent-rose)">PDF</span>
+    </div>
     <div class="nav-item" data-page="reports">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       Raporlar & Çıktılar
@@ -304,7 +309,7 @@
     <div class="avatar">BD</div>
     <div class="user-info">
       <strong>Berkay Davulcu</strong>
-      <span>Sales & Market Intel</span>
+      <span>Satış & Pazar Analisti</span>
     </div>
   </div>
 </nav>
@@ -324,7 +329,7 @@
     <!-- ══════ OVERVIEW ══════ -->
     <div class="page active" id="page-overview">
       <div class="page-header">
-        <h2>Satış İstihbarat Merkezi</h2>
+        <h2>Satış Bilgi Merkezi</h2>
         <p>Akkim Yapı Kimyasalları — data-driven satış optimizasyonu ve pazar istihbaratı</p>
       </div>
       <div class="kpi-grid">
@@ -429,32 +434,57 @@
     <div class="page" id="page-market">
       <div class="page-header">
         <h2>Pazar Analizi</h2>
-        <p>Global & Türkiye inşaat kimyasalları pazar büyüklüğü, trendler ve fırsatlar</p>
+        <p>Global inşaat kimyasalları — kıta seç, detaylara in</p>
       </div>
       <div class="kpi-grid">
         <div class="kpi-card"><div class="kpi-label">Global Pazar</div><div class="kpi-value" style="color:var(--accent-blue)">$85.2B</div><div class="kpi-change positive">▲ 6.8% CAGR</div></div>
         <div class="kpi-card"><div class="kpi-label">Türkiye Payı</div><div class="kpi-value" style="color:var(--accent-emerald)">~$2.1B</div><div class="kpi-change positive">▲ Deprem sonrası yenileme</div></div>
-        <div class="kpi-card"><div class="kpi-label">Sika Global</div><div class="kpi-value" style="color:var(--accent-amber)">CHF 11.2B</div><div class="kpi-change positive">2025 Yılsonu</div></div>
+        <div class="kpi-card"><div class="kpi-label">Sika Global</div><div class="kpi-value" style="color:var(--accent-amber)">CHF 11.2B</div><div class="kpi-change positive">2025 · 102 ülke</div></div>
         <div class="kpi-card"><div class="kpi-label">En Hızlı Büyüyen</div><div class="kpi-value" style="font-size:20px;color:var(--accent-violet)">Su Yalıtım</div><div class="kpi-change positive">▲ 8.2% CAGR</div></div>
       </div>
+
+      <div class="section-title">Bölge Seç — Detaylı Analiz</div>
+
+      <div class="filter-bar" id="regionFilter">
+        <button class="filter-btn active" onclick="selectRegion('all',this)">🌍 Global</button>
+        <button class="filter-btn" onclick="selectRegion('ap',this)">🌏 Asya-Pasifik</button>
+        <button class="filter-btn" onclick="selectRegion('eu',this)">🌍 Avrupa</button>
+        <button class="filter-btn" onclick="selectRegion('na',this)">🌎 Kuzey Amerika</button>
+        <button class="filter-btn" onclick="selectRegion('me',this)">🌍 Ortadoğu & Afrika</button>
+        <button class="filter-btn" onclick="selectRegion('la',this)">🌎 Latin Amerika</button>
+      </div>
+
+      <div class="grid-2">
+        <!-- MAP -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">🗺️ Dünya Haritası</div><span class="tag tag-blue" id="regionLabel">Global</span></div>
+          <svg id="worldMap" viewBox="0 0 900 450" style="width:100%;height:auto;border-radius:var(--radius-sm);background:var(--bg-primary)"></svg>
+        </div>
+        <!-- REGION INFO -->
+        <div class="card">
+          <div class="card-header"><div class="card-title" id="regionTitle">🌍 Global Özet</div></div>
+          <div id="regionInfo"></div>
+        </div>
+      </div>
+
       <div class="grid-2">
         <div class="card">
-          <div class="card-header"><div class="card-title">Bölgesel Paylar</div></div>
-          <div class="competitor-list">
-            <div class="competitor-row"><div class="competitor-logo" style="background:var(--gradient-blue)">AP</div><div class="competitor-info"><div class="competitor-name">Asya-Pasifik</div><div class="competitor-detail">Çin, Hindistan liderliğinde</div></div><div class="competitor-metrics">38%</div></div>
-            <div class="competitor-row"><div class="competitor-logo" style="background:var(--gradient-emerald)">EU</div><div class="competitor-info"><div class="competitor-name">Avrupa</div><div class="competitor-detail">Sürdürülebilirlik odaklı</div></div><div class="competitor-metrics">26%</div></div>
-            <div class="competitor-row"><div class="competitor-logo" style="background:var(--gradient-amber)">NA</div><div class="competitor-info"><div class="competitor-name">Kuzey Amerika</div><div class="competitor-detail">Altyapı yatırımları</div></div><div class="competitor-metrics">22%</div></div>
-            <div class="competitor-row"><div class="competitor-logo" style="background:var(--gradient-violet)">ME</div><div class="competitor-info"><div class="competitor-name">Ortadoğu & Afrika</div><div class="competitor-detail">Mega projeler</div></div><div class="competitor-metrics">14%</div></div>
-          </div>
+          <div class="card-header"><div class="card-title" id="regionLeadersTitle">🏆 Lider Şirketler</div></div>
+          <div id="regionLeaders"></div>
         </div>
         <div class="card">
-          <div class="card-header"><div class="card-title">Sika 2028 Stratejik Hedefler</div></div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-blue);font-size:13px;"><strong>Organik Büyüme:</strong> Yerel para bazında %4-6</div>
-            <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-emerald);font-size:13px;"><strong>EBITDA Marjı:</strong> %19.5–19.8 hedefi</div>
-            <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-amber);font-size:13px;"><strong>MBCC Sinerjisi:</strong> CHF 150-200M yıllık tasarruf</div>
-            <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-violet);font-size:13px;"><strong>Akkim Akizisyonu:</strong> Yapıştırıcı & sealant segmentinde güçlenme</div>
-          </div>
+          <div class="card-header"><div class="card-title" id="regionProductsTitle">📦 En Çok Satılan Ürün Kategorileri</div></div>
+          <div id="regionProducts"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:-8px">
+        <div class="card-header"><div class="card-title">Sika 2028 Stratejik Hedefler</div></div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-blue);font-size:13px;"><strong>Organik Büyüme:</strong> Yerel para bazında %4-6</div>
+          <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-emerald);font-size:13px;"><strong>EBITDA Marjı:</strong> %19.5–19.8 hedefi</div>
+          <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-amber);font-size:13px;"><strong>MBCC Sinerjisi:</strong> CHF 150-200M yıllık tasarruf</div>
+          <div style="padding:12px;background:var(--bg-primary);border-radius:8px;border-left:3px solid var(--accent-violet);font-size:13px;"><strong>Akkim Akizisyonu:</strong> Yapıştırıcı & sealant segmentinde güçlenme</div>
         </div>
       </div>
     </div>
@@ -747,6 +777,73 @@
       </div>
     </div>
 
+    <!-- ══════ PDF BUILDER ══════ -->
+    <div class="page" id="page-pdf-builder">
+      <div class="page-header">
+        <h2>PDF Rapor Oluştur</h2>
+        <p>İstediğin bölümleri seç, özelleştir ve tek tıkla PDF indir</p>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr;">
+        <!-- LEFT: Section Selector -->
+        <div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="card-header"><div class="card-title">📋 Rapor Bölümlerini Seç</div></div>
+            <p style="font-size:12px;color:var(--text-secondary);margin-bottom:14px">Rapora eklemek istediğin bölümleri işaretle. Alt başlıkları da ayrı ayrı seçebilirsin.</p>
+
+            <div id="pdfSections" style="display:flex;flex-direction:column;gap:10px">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">⚙️ Rapor Ayarları</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div>
+                <label style="font-size:11px;color:var(--text-muted);display:block;margin-bottom:4px">Rapor Başlığı</label>
+                <input type="text" id="pdfTitle" value="Akkim Satış Bilgi Raporu" style="width:100%;padding:8px 12px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-primary);font-family:'DM Sans';font-size:12px" />
+              </div>
+              <div>
+                <label style="font-size:11px;color:var(--text-muted);display:block;margin-bottom:4px">Hazırlayan</label>
+                <input type="text" id="pdfAuthor" value="Berkay Davulcu — Satış & Pazar Analisti" style="width:100%;padding:8px 12px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-primary);font-family:'DM Sans';font-size:12px" />
+              </div>
+              <div>
+                <label style="font-size:11px;color:var(--text-muted);display:block;margin-bottom:4px">Tarih</label>
+                <input type="text" id="pdfDate" style="width:100%;padding:8px 12px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-primary);font-family:'DM Sans';font-size:12px" />
+              </div>
+              <div>
+                <label style="font-size:11px;color:var(--text-muted);display:block;margin-bottom:4px">Gizlilik</label>
+                <select id="pdfConfidential" style="width:100%;padding:8px 12px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-primary);font-family:'DM Sans';font-size:12px">
+                  <option value="Şirket İçi — Gizli">Şirket İçi — Gizli</option>
+                  <option value="Genel Dağıtım">Genel Dağıtım</option>
+                  <option value="Yönetim Raporu">Yönetim Raporu</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Preview + Generate -->
+        <div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="card-header">
+              <div class="card-title">👁️ Önizleme</div>
+              <span class="tag tag-blue" id="pdfPageCount">0 bölüm seçili</span>
+            </div>
+            <div id="pdfPreview" style="min-height:200px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-size:12px;color:var(--text-secondary)">
+              <div style="text-align:center;padding:40px 0;color:var(--text-muted)">
+                Soldaki menüden bölüm seçerek başla
+              </div>
+            </div>
+          </div>
+
+          <button onclick="generatePDF()" style="width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent-rose),#be123c);border:none;border-radius:var(--radius-sm);color:white;font-family:'DM Sans';font-weight:700;font-size:14px;cursor:pointer;transition:opacity 0.2s;box-shadow:0 4px 12px rgba(225,29,72,0.25)" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+            📄 PDF Oluştur & İndir
+          </button>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:8px;text-align:center">Tarayıcının yazdırma penceresi açılacak → "PDF olarak kaydet" seç</p>
+        </div>
+      </div>
+    </div>
+
     <!-- ══════ REPORTS ══════ -->
     <div class="page" id="page-reports">
       <div class="page-header"><h2>Raporlar & Çıktılar</h2><p>Tamamlanan analizler ve veri çıktıları</p></div>
@@ -766,7 +863,7 @@
 const navItems = document.querySelectorAll('.nav-item[data-page]');
 const pages = document.querySelectorAll('.page');
 const pageTitle = document.getElementById('pageTitle');
-const titles = { overview:'Dashboard', market:'Pazar Analizi', competitors:'Rakip İstihbaratı', 'sika-compare':'Sika vs Akkim/Akfix', products:'Ürün Portföyü', 'us-market':'ABD Prospect DB', reports:'Raporlar & Çıktılar', acquisitions:'Global Akizisyonlar', news:'Sektör Haberleri', 'sales-kpi':'Satış KPI Dashboard', 'apollo-import':'Apollo CSV Import' };
+const titles = { overview:'Dashboard', market:'Pazar Analizi', competitors:'Rakip İstihbaratı', 'sika-compare':'Sika vs Akkim/Akfix', products:'Ürün Portföyü', 'us-market':'ABD Prospect DB', reports:'Raporlar & Çıktılar', acquisitions:'Global Akizisyonlar', news:'Sektör Haberleri', 'sales-kpi':'Satış KPI Dashboard', 'apollo-import':'Apollo CSV Import', 'pdf-builder':'PDF Rapor Oluştur' };
 
 function navigateTo(id) {
   navItems.forEach(n => n.classList.remove('active'));
@@ -1593,6 +1690,220 @@ function exportApolloFiltered() {
     else handleApolloCSV(document.getElementById(inputId));
   });
 });
+
+// ══════ REGION MAP & DATA ══════
+const regionData = {
+  all: { title:'🌍 Global Özet', share:'100%', size:'$85.2B', cagr:'6.8%', desc:'Global inşaat kimyasalları pazarı hızla büyüyor. Asya-Pasifik en büyük pay, Kuzey Amerika en yüksek marj.',
+    leaders:[{n:'Sika AG',c:'🇨🇭',s:'CHF 11.2B'},{n:'BASF/MBCC',c:'🇩🇪',s:'€6.2B'},{n:'Saint-Gobain',c:'🇫🇷',s:'€5.8B'},{n:'Mapei',c:'🇮🇹',s:'€4.1B'},{n:'RPM International',c:'🇺🇸',s:'$7.3B'},{n:'Henkel',c:'🇩🇪',s:'€5.6B'}],
+    products:[{n:'Beton Katkıları',p:'28%'},{n:'Su Yalıtım',p:'22%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Zemin Sistemleri',p:'14%'},{n:'Çatı Sistemleri',p:'10%'},{n:'Diğer',p:'6%'}]},
+  ap: { title:'🌏 Asya-Pasifik', share:'38%', size:'$32.4B', cagr:'7.8%', desc:'Çin ve Hindistan liderliğinde en büyük ve en hızlı büyüyen bölge. Kentleşme, altyapı yatırımları ve konut talebi itici güçler.',
+    leaders:[{n:'Sika (Çin)',c:'🇨🇳',s:'Bölge lideri'},{n:'Pidilite Industries',c:'🇮🇳',s:'₹13,500 Cr'},{n:'Mapei Asia',c:'🇸🇬',s:'Bölgesel'},{n:'Fosroc (Saint-Gobain)',c:'🇮🇳',s:'$1B+'},{n:'JSW Cement',c:'🇮🇳',s:'Yeni giriş'},{n:'TOA Paint',c:'🇹🇭',s:'Bölgesel'}],
+    products:[{n:'Beton Katkıları',p:'35%'},{n:'Seramik Yapıştırıcı',p:'22%'},{n:'Su Yalıtım',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'13%'},{n:'Zemin',p:'6%'},{n:'Diğer',p:'4%'}]},
+  eu: { title:'🌍 Avrupa', share:'26%', size:'$22.2B', cagr:'5.2%', desc:'Sürdürülebilirlik odaklı olgun pazar. Düşük VOC, REACH regülasyonları, yeşil bina sertifikaları belirleyici. Renovasyon projeleri ağırlıkta.',
+    leaders:[{n:'Sika AG',c:'🇨🇭',s:'CHF 11.2B'},{n:'Saint-Gobain/Weber',c:'🇫🇷',s:'€5.8B'},{n:'Mapei SpA',c:'🇮🇹',s:'€4.1B'},{n:'Henkel (Ceresit)',c:'🇩🇪',s:'€5.6B'},{n:'Bostik (Arkema)',c:'🇫🇷',s:'€2.3B'},{n:'Ardex',c:'🇩🇪',s:'€900M'}],
+    products:[{n:'Yapıştırıcı & Sealant',p:'26%'},{n:'Su Yalıtım',p:'22%'},{n:'Zemin Sistemleri',p:'18%'},{n:'Beton Katkıları',p:'16%'},{n:'Mantolama/EIFS',p:'12%'},{n:'Çatı',p:'6%'}]},
+  na: { title:'🌎 Kuzey Amerika', share:'22%', size:'$18.7B', cagr:'6.1%', desc:'ABD altyapı yatırım paketi ($1.2T) büyümeyi hızlandırıyor. Yüksek marjlı ürünler, teknoloji odaklı çözümler hakim.',
+    leaders:[{n:'Sika USA',c:'🇺🇸',s:'Bölge lideri'},{n:'RPM International',c:'🇺🇸',s:'$7.3B'},{n:'H.B. Fuller',c:'🇺🇸',s:'$3.5B'},{n:'DAP Products',c:'🇺🇸',s:'$600M+'},{n:'Quikrete',c:'🇺🇸',s:'$2B+'},{n:'Laticrete',c:'🇺🇸',s:'$500M+'}],
+    products:[{n:'Beton Katkıları',p:'30%'},{n:'Çatı Sistemleri',p:'20%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'14%'},{n:'Su Yalıtım',p:'12%'},{n:'Diğer',p:'6%'}]},
+  me: { title:'🌍 Ortadoğu & Afrika', share:'10%', size:'$8.5B', cagr:'8.5%', desc:'NEOM, Vision 2030, Expo gibi mega projeler talebi yüksek tutuyor. Suudi Arabistan ve BAE lider pazarlar.',
+    leaders:[{n:'Sika (GCC)',c:'🇦🇪',s:'Bölge lideri'},{n:'Fosroc',c:'🇦🇪',s:'Saint-Gobain'},{n:'Bitumat',c:'🇸🇦',s:'Mapei grubu'},{n:'Gulf Additive (Sika)',c:'🇶🇦',s:'Yeni akizisyon'},{n:'Awazil (Sika)',c:'🇸🇦',s:'Yeni akizisyon'},{n:'BASF CC',c:'🇦🇪',s:'Bölgesel'}],
+    products:[{n:'Beton Katkıları',p:'32%'},{n:'Su Yalıtım',p:'25%'},{n:'Yapıştırıcı & Sealant',p:'18%'},{n:'Zemin',p:'12%'},{n:'Çatı',p:'8%'},{n:'Diğer',p:'5%'}]},
+  la: { title:'🌎 Latin Amerika', share:'4%', size:'$3.4B', cagr:'7.2%', desc:'Brezilya ve Meksika liderliğinde büyüyen pazar. Karayibler ve And bölgesi genişleme fırsatları sunuyor.',
+    leaders:[{n:'Sika LatAm',c:'🇧🇷',s:'Bölge lideri'},{n:'Vinaldom (Sika)',c:'🇩🇴',s:'Yeni akizisyon'},{n:'Chema Group (Sika)',c:'🇵🇪',s:'Yeni akizisyon'},{n:'Mapei Brasil',c:'🇧🇷',s:'Bölgesel'},{n:'Henkel LatAm',c:'🇲🇽',s:'Bölgesel'},{n:'Euclid (RPM)',c:'🇧🇷',s:'Bölgesel'}],
+    products:[{n:'Beton Katkıları',p:'30%'},{n:'Su Yalıtım',p:'24%'},{n:'Yapıştırıcı & Sealant',p:'20%'},{n:'Seramik Yapıştırıcı',p:'14%'},{n:'Zemin',p:'7%'},{n:'Diğer',p:'5%'}]},
+};
+
+// Simple world map paths (simplified continents)
+const mapPaths = {
+  na: 'M50,80 L200,60 L220,120 L200,200 L150,220 L100,200 L60,160 Z',
+  la: 'M150,220 L200,200 L230,260 L220,350 L180,380 L160,340 L140,280 Z',
+  eu: 'M380,70 L480,60 L500,120 L490,160 L430,170 L380,140 Z',
+  af: 'M380,170 L460,160 L500,200 L490,320 L440,360 L390,320 L370,240 Z',
+  ap: 'M520,60 L800,70 L830,180 L780,280 L700,300 L600,260 L540,180 L520,120 Z',
+  me: 'M460,120 L540,110 L560,180 L520,200 L470,180 Z',
+};
+
+function drawMap(selected) {
+  const svg = document.getElementById('worldMap');
+  svg.innerHTML = '';
+  const regionColors = { na:'#2563eb', la:'#7c3aed', eu:'#059669', af:'#d97706', ap:'#0891b2', me:'#e11d48' };
+  const regionNames = { na:'Kuzey Amerika', la:'Latin Amerika', eu:'Avrupa', af:'Afrika', ap:'Asya-Pasifik', me:'Ortadoğu' };
+  Object.entries(mapPaths).forEach(([key, path]) => {
+    let fill, opacity, stroke;
+    if (selected === 'all') { fill = regionColors[key]; opacity = 0.6; stroke = regionColors[key]; }
+    else if (selected === key || (selected === 'me' && key === 'af') || (selected === 'me' && key === 'me')) {
+      fill = regionColors[key]; opacity = 0.8; stroke = regionColors[key];
+    } else { fill = '#d1ccc0'; opacity = 0.3; stroke = '#bbb5a8'; }
+    svg.innerHTML += `<path d="${path}" fill="${fill}" fill-opacity="${opacity}" stroke="${stroke}" stroke-width="1.5" style="cursor:pointer;transition:all .3s" onmouseover="this.setAttribute('fill-opacity','1')" onmouseout="this.setAttribute('fill-opacity','${opacity}')" onclick="selectRegionFromMap('${key}')" />`;
+    // Label
+    const bbox = new DOMParser().parseFromString(`<svg xmlns="http://www.w3.org/2000/svg"><path d="${path}"/></svg>`,'image/svg+xml');
+    const coords = path.match(/\d+/g).map(Number);
+    const cx = coords.filter((_,i)=>i%2===0).reduce((a,b)=>a+b,0) / (coords.length/2);
+    const cy = coords.filter((_,i)=>i%2===1).reduce((a,b)=>a+b,0) / (coords.length/2);
+    const isHighlighted = selected === 'all' || selected === key || (selected === 'me' && (key === 'af' || key === 'me'));
+    svg.innerHTML += `<text x="${cx}" y="${cy}" text-anchor="middle" font-size="11" font-weight="600" fill="${isHighlighted ? '#1e293b' : '#94a3b8'}" font-family="DM Sans" pointer-events="none">${regionNames[key]||''}</text>`;
+  });
+}
+
+function selectRegionFromMap(key) {
+  if (key === 'af') key = 'me';
+  document.querySelectorAll('#regionFilter .filter-btn').forEach(b => b.classList.remove('active'));
+  const btns = document.querySelectorAll('#regionFilter .filter-btn');
+  const idx = {all:0,ap:1,eu:2,na:3,me:4,la:5}[key] || 0;
+  if (btns[idx]) btns[idx].classList.add('active');
+  selectRegion(key, null);
+}
+
+function selectRegion(key, btn) {
+  if (btn) { document.querySelectorAll('#regionFilter .filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+  const r = regionData[key];
+  document.getElementById('regionLabel').textContent = r.share + ' pay';
+  document.getElementById('regionTitle').textContent = r.title;
+  document.getElementById('regionInfo').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+      <div style="background:var(--bg-primary);border-radius:var(--radius-sm);padding:12px;text-align:center;border:1px solid var(--border)"><div style="font-family:'Space Mono';font-size:18px;font-weight:700;color:var(--accent-blue)">${r.size}</div><div style="font-size:10px;color:var(--text-muted)">Pazar Büyüklüğü</div></div>
+      <div style="background:var(--bg-primary);border-radius:var(--radius-sm);padding:12px;text-align:center;border:1px solid var(--border)"><div style="font-family:'Space Mono';font-size:18px;font-weight:700;color:var(--accent-emerald)">${r.cagr}</div><div style="font-size:10px;color:var(--text-muted)">CAGR</div></div>
+      <div style="background:var(--bg-primary);border-radius:var(--radius-sm);padding:12px;text-align:center;border:1px solid var(--border)"><div style="font-family:'Space Mono';font-size:18px;font-weight:700;color:var(--accent-violet)">${r.share}</div><div style="font-size:10px;color:var(--text-muted)">Global Pay</div></div>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-secondary);line-height:1.6">${r.desc}</p>
+  `;
+  document.getElementById('regionLeadersTitle').textContent = '🏆 ' + r.title.split(' ').slice(1).join(' ') + ' — Lider Şirketler';
+  document.getElementById('regionLeaders').innerHTML = r.leaders.map(l => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+      <span style="font-size:16px">${l.c}</span>
+      <span style="font-size:13px;font-weight:600;flex:1">${l.n}</span>
+      <span style="font-size:11px;font-family:'Space Mono';color:var(--text-muted)">${l.s}</span>
+    </div>
+  `).join('');
+  document.getElementById('regionProductsTitle').textContent = '📦 ' + r.title.split(' ').slice(1).join(' ') + ' — Ürün Dağılımı';
+  const maxP = Math.max(...r.products.map(p => parseInt(p.p)));
+  document.getElementById('regionProducts').innerHTML = r.products.map(p => `
+    <div style="display:flex;align-items:center;gap:10px;padding:6px 0">
+      <span style="font-size:12px;flex:1">${p.n}</span>
+      <div style="flex:2;height:8px;background:var(--bg-primary);border-radius:4px;overflow:hidden;border:1px solid var(--border)"><div style="height:100%;width:${(parseInt(p.p)/maxP*100)}%;background:var(--gradient-blue);border-radius:4px"></div></div>
+      <span style="font-size:11px;font-family:'Space Mono';color:var(--text-primary);min-width:35px;text-align:right">${p.p}</span>
+    </div>
+  `).join('');
+  drawMap(key);
+}
+
+// Init map
+selectRegion('all', null);
+
+// ══════ PDF BUILDER ══════
+function initPdfBuilder() {
+  const d = document.getElementById('pdfDate');
+  if(d) d.value = new Date().toLocaleDateString('tr-TR',{day:'2-digit',month:'long',year:'numeric'});
+  const c = document.getElementById('pdfSections');
+  if(!c) return;
+  const sections = [
+    {id:'cover',name:'📄 Kapak Sayfası',subs:[], always:true},
+    {id:'overview',name:'📊 Dashboard Özeti',subs:['KPI Kartları','Sika 2025 Özeti']},
+    {id:'market',name:'🌍 Pazar Analizi',subs:['Global Büyüklük','Asya-Pasifik','Avrupa','Kuzey Amerika','Ortadoğu & Afrika','Latin Amerika','Türkiye']},
+    {id:'competitors',name:'🏢 Rakip İstihbaratı',subs:['Kalekim','Sika TR','Mapei','Weber','Henkel','Bostik','Flex Seal']},
+    {id:'sika-compare',name:'🔄 Sika vs Akfix',subs:['Yapıştırma & Sızdırmazlık','PU Köpükler','Yapıştırıcılar','Yangın Serisi','Su Yalıtım','Beton','Çatı','Zemin','Endüstri','Gap Özeti']},
+    {id:'products',name:'📦 Ürün Portföyü',subs:productData.map(c=>c.category)},
+    {id:'us-market',name:'🇺🇸 ABD Pazarı',subs:['Hedef Bölgeler','Prospect Listesi','Pipeline']},
+    {id:'acquisitions',name:'🏷️ Akizisyonlar',subs:['Sika AG','Saint-Gobain','Mapei','Henkel','Diğer']},
+    {id:'news',name:'📰 Sektör Haberleri',subs:['Son Gelişmeler','Takip Kaynakları']},
+  ];
+  c.innerHTML = sections.map(s => `
+    <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden">
+      <div style="padding:10px 14px;display:flex;align-items:center;gap:10px;cursor:pointer" onclick="var el=this.nextElementSibling;el.style.display=el.style.display==='block'?'none':'block'">
+        <input type="checkbox" class="pdf-sec" data-id="${s.id}" ${s.always?'checked disabled':''} onchange="updatePdfPreview()" onclick="event.stopPropagation()" style="accent-color:var(--accent-blue);width:16px;height:16px;cursor:pointer"/>
+        <label style="font-size:13px;font-weight:600;cursor:pointer;flex:1">${s.name}</label>
+        ${s.subs.length?'<span style="font-size:10px;color:var(--text-muted)">▾ '+s.subs.length+' alt</span>':''}
+      </div>
+      ${s.subs.length?`<div style="display:none;padding:4px 14px 10px 42px">
+        <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--accent-blue);cursor:pointer;margin-bottom:6px" onclick="var boxes=this.parentElement.querySelectorAll('.pdf-sub');var all=[...boxes].every(b=>b.checked);boxes.forEach(b=>b.checked=!all);updatePdfPreview()"><span style="text-decoration:underline">Tümünü seç/kaldır</span></label>
+        ${s.subs.map(sub=>`<label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);cursor:pointer;margin-bottom:4px"><input type="checkbox" class="pdf-sub" data-parent="${s.id}" data-name="${sub}" onchange="updatePdfPreview()" style="accent-color:var(--accent-blue);width:14px;height:14px;cursor:pointer"/>${sub}</label>`).join('')}
+      </div>`:''}
+    </div>
+  `).join('');
+}
+
+function updatePdfPreview() {
+  const preview = document.getElementById('pdfPreview');
+  const countEl = document.getElementById('pdfPageCount');
+  let items = [];
+  document.querySelectorAll('.pdf-sec:checked').forEach(sec => {
+    const id = sec.dataset.id;
+    const subs = [...document.querySelectorAll(`.pdf-sub[data-parent="${id}"]:checked`)].map(b=>b.dataset.name);
+    items.push({id, subs});
+  });
+  countEl.textContent = items.length + ' bölüm seçili';
+  if(items.length <= 1) { preview.innerHTML='<div style="text-align:center;padding:40px 0;color:var(--text-muted)">Soldaki menüden bölüm seçerek başla</div>'; return; }
+  const title = document.getElementById('pdfTitle').value;
+  const author = document.getElementById('pdfAuthor').value;
+  preview.innerHTML = `
+    <div style="text-align:center;padding:10px 0 14px;border-bottom:1px solid var(--border);margin-bottom:10px">
+      <div style="font-size:15px;font-weight:700;color:var(--text-primary)">${title}</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:3px">${author}</div>
+    </div>
+    <div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">İçindekiler</div>
+    ${items.map((s,i)=>`<div style="margin-bottom:6px"><div style="font-size:12px;font-weight:600">${i+1}. ${s.id}</div>${s.subs.length?s.subs.map((sub,j)=>`<div style="font-size:11px;color:var(--text-secondary);padding-left:14px">${i+1}.${j+1} ${sub}</div>`).join(''):'<div style="font-size:10px;color:var(--text-muted);padding-left:14px;font-style:italic">Tüm içerik</div>'}</div>`).join('')}
+  `;
+}
+
+function generatePDF() {
+  const title = document.getElementById('pdfTitle').value;
+  const author = document.getElementById('pdfAuthor').value;
+  const date = document.getElementById('pdfDate').value;
+  const conf = document.getElementById('pdfConfidential').value;
+  let items = [];
+  document.querySelectorAll('.pdf-sec:checked').forEach(sec => {
+    const id = sec.dataset.id;
+    const subs = [...document.querySelectorAll(`.pdf-sub[data-parent="${id}"]:checked`)].map(b=>b.dataset.name);
+    items.push({id, subs});
+  });
+  if(items.length <= 1){alert('Lütfen en az bir bölüm seçin');return;}
+
+  const w = window.open('','_blank');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title}</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;color:#1e293b;padding:40px;max-width:800px;margin:0 auto;font-size:13px;line-height:1.6}
+  .cover{text-align:center;padding:80px 0;page-break-after:always}.cover h1{font-size:28px;font-weight:800;margin-bottom:8px}.cover .sub{font-size:14px;color:#475569;margin-bottom:20px}.cover .meta{font-size:12px;color:#94a3b8}.cover .conf{display:inline-block;padding:4px 16px;border:2px solid #e11d48;color:#e11d48;border-radius:20px;font-size:11px;font-weight:600;margin-top:16px}
+  h2{font-size:18px;font-weight:700;margin:24px 0 12px;padding-bottom:6px;border-bottom:2px solid #2563eb}h3{font-size:14px;font-weight:600;margin:16px 0 8px;color:#475569}
+  table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:12px}th{background:#f1f5f9;padding:8px 10px;text-align:left;font-weight:600;font-size:11px;border-bottom:2px solid #e2e8f0}td{padding:7px 10px;border-bottom:1px solid #e2e8f0}
+  .kpi-row{display:flex;gap:12px;margin:12px 0}.kpi-box{flex:1;padding:12px;border:1px solid #e2e8f0;border-radius:8px;text-align:center}.kpi-box .v{font-family:'Space Mono';font-size:18px;font-weight:700}.kpi-box .l{font-size:10px;color:#94a3b8;margin-top:2px}
+  @media print{body{padding:20px}.no-print{display:none}}</style></head><body>`);
+
+  w.document.write(`<div class="cover"><div style="font-size:12px;color:#94a3b8;margin-bottom:40px">AKKIM YAPI KİMYASALLARI A.Ş.</div><h1>${title}</h1><div class="sub">${author}</div><div class="meta">${date}</div><div class="conf">${conf}</div></div>`);
+  w.document.write('<h2>İçindekiler</h2>');
+  items.forEach((s,i)=>{if(s.id==='cover')return;w.document.write(`<div style="margin:4px 0"><strong>${i}.</strong> ${s.id} ${s.subs.length?'('+s.subs.join(', ')+')':''}</div>`);});
+  w.document.write('<div style="page-break-after:always"></div>');
+
+  items.forEach(s=>{
+    if(s.id==='cover')return;
+    w.document.write(`<h2>${s.id.toUpperCase()}</h2>`);
+    if(s.id==='sika-compare'){
+      w.document.write('<table><tr><th>Kategori</th><th>Sika</th><th>Akfix</th><th>Gap</th></tr>');
+      sikaData.forEach(c=>{w.document.write(`<tr><td>${c.name.split('(')[0]}</td><td>${c.sika.length}</td><td>${c.akfix.length}</td><td>${c.gaps.length}</td></tr>`)});
+      w.document.write('</table>');
+    }
+    if(s.id==='market'){
+      w.document.write('<div class="kpi-row"><div class="kpi-box"><div class="v" style="color:#2563eb">$85.2B</div><div class="l">Global</div></div><div class="kpi-box"><div class="v" style="color:#059669">6.8%</div><div class="l">CAGR</div></div></div>');
+    }
+    if(s.id==='products'){
+      productData.forEach(cat=>{
+        if(s.subs.length===0 || s.subs.includes(cat.category)){
+          w.document.write(`<h3>${cat.category} (${cat.products.length})</h3><p style="font-size:11px;color:#475569">${cat.products.map(p=>typeof p==='object'?p.n:p).join(' · ')}</p>`);
+        }
+      });
+    }
+    if(s.id==='competitors'){
+      w.document.write('<table><tr><th>Şirket</th><th>Tehdit</th></tr><tr><td>Kalekim</td><td>85</td></tr><tr><td>Sika TR</td><td>80</td></tr><tr><td>Mapei</td><td>70</td></tr><tr><td>Henkel</td><td>72</td></tr></table>');
+    }
+  });
+
+  w.document.write(`<div style="margin-top:40px;text-align:center;font-size:10px;color:#94a3b8;border-top:1px solid #e2e8f0;padding-top:10px">${title} · ${author} · ${date} · ${conf}</div>`);
+  w.document.write('</body></html>');
+  w.document.close();
+  setTimeout(()=>w.print(), 500);
+}
+
+// Init PDF builder on page load
+initPdfBuilder();
 </script>
 </body>
 </html>
